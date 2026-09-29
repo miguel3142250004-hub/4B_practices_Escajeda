@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de Flujo - Tarea</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        /* Estilos del botón de regresar */
+        .btn-back {
+            align-self: flex-start;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #0f2027;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-back:hover {
+            background-color: #2c5364;
+            transform: scale(1.05);
+        }
+
+        .diagram-container {
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 60px;
+            text-align: center;
+            border: 2px solid #000000;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        h2 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 18px;
+            margin: 0 0 30px 0;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón para regresar al menú principal -->
+    <div style="width: 100%; max-width: 900px; display: flex;">
+        <a href="index_2.html" class="btn-back">⬅ Volver al Inicio</a>
+    </div>
+
+    <div class="diagram-container">
+        <h2>2DO DIAGRAMA: MONEY LOGIC</h2>
+        <h3>Student: Miguel Isai Escajeda Sariñana</h3>
+        
+        <div class="mermaid">
+            graph TD
+                A[Start: Initial Client Consultation] --> B{What does the client need?}
+                
+                B -->|Custom PC Build| C[Determine Budget & Requirements]
+                C --> D[Generate Parts List]
+                D --> E[Purchase Components]
+                E --> F[Assemble PC & Install OS]
+                F --> G[Charge Flat Build Fee]
+                G --> H[$$ Income 1: Direct Labor Payment $$]
+                
+                B -->|Optimization & Upgrades| I[Run System Diagnostics]
+                I --> J{Hardware or Software Issue?}
+                
+                J -->|Hardware| K[Recommend & Buy Upgrades]
+                K --> L[Install Physical Upgrades]
+                L --> M[Charge Installation Fee]
+                M --> N[$$ Income 2: Hardware Labor Payment $$]
+                
+                J -->|Software| O[Perform OS Tuning & Bloatware Removal]
+                O --> P[Charge Flat Optimization Fee]
+                P --> Q[$$ Income 3: Software Service Fee $$]
+                
+                H --> R[Deliver Final Product to Client]
+                N --> R
+                Q --> R
+                
+                R --> S[Offer 6-Month Maintenance Plan]
+                S --> T{Does Client Accept?}
+                T -->|Yes| U[$$ Income 4: Recurring Subscription $$]
+                T -->|No| V[End of Current Transaction]
+                
+                U --> W([Total Business Revenue Generated])
+                V --> W
+        </div>
+    </div>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#ffffff',
+                primaryTextColor: '#000000',
+                primaryBorderColor: '#000000',
+                lineColor: '#000000',
+                secondaryColor: '#ffffff',
+                tertiaryColor: '#ffffff',
+                clusterBkg: '#ffffff',
+                clusterBorder: '#000000',
+                mainBkg: '#ffffff',
+                nodeBorder: '#000000'
+            },
+            flowchart: {
+                curve: 'step'
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagrama de PC - Miguel</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Estilos del botón de regresar */
+        .btn-back {
+            align-self: flex-start;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #0f2027;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .btn-back:hover {
+            background-color: #2c5364;
+            transform: scale(1.05);
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin: 5px 0;
+            font-weight: bold;
+        }
+        .header-section {
+            margin-bottom: 40px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .diagram-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botón para regresar al menú principal -->
+    <div style="width: 100%; max-width: 900px; display: flex;">
+        <a href="index_2.html" class="btn-back">⬅ Volver al Inicio</a>
+    </div>
+
+    <div class="header-section">
+        <h1>Diagrama de Flujo: Trabajo de PC</h1>
+        <h2>Autor: Miguel Isaí Escajeda Sariñana</h2>
+    </div>
+    
+    <div class="diagram-container">
+        <pre class="mermaid">
+            graph TD
+                A([Inicio]) --> B{¿Construcción u<br>Optimización?}
+                
+                %% Rama de Construcción
+                B -->|Construcción| C[Seleccionar componentes<br>Ej: 1 TB NVMe]
+                C --> D[Ensamblar]
+                D --> E[Instalar Windows 10]
+                
+                %% Rama de Optimización
+                B -->|Optimización| F[Diagnóstico]
+                F --> G[Mantenimiento físico]
+                G --> H[Optimizar]
+                
+                %% Convergencia
+                E --> I[Actualizar Drivers]
+                H --> I
+                
+                I --> J[Pruebas]
+                J --> K{¿Rendimiento<br>óptimo?}
+                
+                %% Control de Calidad
+                K -->|No| L[Ajustar]
+                L --> J
+                
+                K -->|Sí| M[Entregar]
+                M --> N([Fin])
+        </pre>
+    </div>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#ffffff',
+                primaryTextColor: '#000000',
+                primaryBorderColor: '#000000',
+                lineColor: '#000000',
+                secondaryColor: '#ffffff',
+                tertiaryColor: '#ffffff',
+                fontFamily: 'Arial, sans-serif'
+            },
+            flowchart: {
+                curve: 'linear',
+                nodeSpacing: 50,
+                rankSpacing: 50
+            }
+        });
+    </script>
+</body>
+</html>
